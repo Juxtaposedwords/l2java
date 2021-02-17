@@ -2,3 +2,5 @@
 *
 #except java files
 !*.java
+
+# testing git pulgins
