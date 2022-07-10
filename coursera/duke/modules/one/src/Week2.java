@@ -23,16 +23,26 @@ public class Week2 {
      * @param stopCodon
      * @return
      */
-    public String findSimpleGene(String dna, String startCodon, String stopCodon){
+    public String findSimpleGene(String dna, String startCodon, String stopCodon) {
         String input = dna.toLowerCase();
         int start = input.indexOf(startCodon.toLowerCase());
         if (start == -1) {
             return "";
         }
-        int stop = input.indexOf(stopCodon.toLowerCase(), start+3);
+        int stop = input.indexOf(stopCodon.toLowerCase(), start + 3);
         if ((stop - start) % 3 == 0) {
-            return input.substring(start, stop+3);
+            return input.substring(start, stop + 3);
         }
         return "";
+    }
+
+    public boolean twoOccurrences(String subject, String corpus) {
+        String text = corpus;
+        int occurrences = 0;
+        while (text.indexOf(subject) != -1) {
+            text = text.substring(text.indexOf(subject) + 1);
+            occurrences++;
+        }
+        return occurrences == 2;
     }
 }
