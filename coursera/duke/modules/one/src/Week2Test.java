@@ -42,7 +42,7 @@ public class Week2Test {
                         "AGTTTTAAAGGATT",
                         "") };
         for (TestSimpleGeneCase tc : tests) {
-            String got = new App().findSimpleGene(tc.have);
+            String got = new Week2().findSimpleGene(tc.have);
             assertEquals(String.format("\n%s\n", tc.description), got, tc.want);
         }
     }
