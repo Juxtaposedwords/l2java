@@ -78,13 +78,13 @@ public class Week2Test {
         }
     }
 
-    class testOccurence {
+    class TestOccurrence {
         public String description;
         public String corpus;
         public String subject;
         public boolean want;
 
-        testOccurence(String description, String corpus, String subject, boolean want) {
+        TestOccurrence(String description, String corpus, String subject, boolean want) {
             this.description = description;
             this.corpus = corpus;
             this.subject = subject;
@@ -93,29 +93,29 @@ public class Week2Test {
     }
 
     @Test
-    public void testTwoOccurences() {
-        testOccurence[] tests = new testOccurence[] {
-                new testOccurence(
+    public void testTwoOccurrences() {
+        TestOccurrence[] tests = new TestOccurrence[] {
+                new TestOccurrence(
                         "subject exist in corpus 2 times",
                         "abca",
                         "a",
                         true),
-                new testOccurence(
+                new TestOccurrence(
                         "subject not in corpus",
                         "abc",
                         "d",
                         false),
-                new testOccurence(
+                new TestOccurrence(
                         "subject exist in corpus 3 times",
                         "abaca",
                         "a",
                         false),
-                new testOccurence(
+                new TestOccurrence(
                         "subject exists in corpus once",
                         "abc",
                         "a",
                         false) };
-        for (testOccurence tc : tests) {
+        for (TestOccurrence tc : tests) {
             boolean got = new Week2().twoOccurrences(tc.subject, tc.corpus);
             assertEquals(String.format("\n%s\n", tc.description), tc.want, got);
         }
