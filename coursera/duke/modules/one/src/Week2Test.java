@@ -1,7 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class AppTest {
+public class Week2Test {
     class TestSimpleGeneCase {
         public String description;
         public String have;
