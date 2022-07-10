@@ -45,5 +45,36 @@ public class Week2Test {
             String got = new Week2().findSimpleGene(tc.have);
             assertEquals(String.format("\n%s\n", tc.description), got, tc.want);
         }
+        // now we do the second version of findSimpleGene
+
+         tests = new TestSimpleGeneCase[] {
+            new TestSimpleGeneCase( 
+                "happy path: has ATG and TAG",
+                "AATGAAATAGA",
+                "atgaaatag"),
+            new TestSimpleGeneCase(
+                "duplicate ATG",
+                "ATGATGTAG",
+                "atgatgtag"),
+            new TestSimpleGeneCase(
+                "duplicate TAG",
+                "ATGTAGTAG",
+                "atgtag"),
+            new TestSimpleGeneCase(
+                "no response:has ATG, no TAG",
+                "ATGAGTA",
+                ""),
+            new TestSimpleGeneCase(
+                "no response: no ATG",
+                "TATATATATATATATATG",
+                ""),
+            new TestSimpleGeneCase(
+                "no response: not modulo 3",
+                "AGTTTTAAAGGATT",
+                "")};
+            for ( TestSimpleGeneCase tc: tests ) {
+                String got = new Week2().findSimpleGene(tc.have, "aTg", "TaG");
+                assertEquals(String.format("\n%s\n", tc.description), got, tc.want);
+            }
     }
 }
