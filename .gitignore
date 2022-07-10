@@ -1,4 +1,6 @@
 #ignore all kind of files
 *.*
-#except java files
-!*.java
+#except java and markdown files
+!*.(java|md)|gitignore)
+
+*/lib/.*
