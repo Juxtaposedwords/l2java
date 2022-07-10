@@ -1,6 +1,4 @@
 #ignore all kind of files
-*
+*.*
 #except java files
 !*.java
-
-# testing git pulgins
