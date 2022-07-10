@@ -121,4 +121,52 @@ public class Week2Test {
         }
     }
 
+    class TestLast {
+        public String description;
+        public String corpus;
+        public String subject;
+        public String want;
+
+        TestLast(String description, String corpus, String subject, String want) {
+            this.description = description;
+            this.corpus = corpus;
+            this.subject = subject;
+            this.want = want;
+        }
+    }
+
+    @Test
+    public void testLastPart() {
+        TestLast[] tests = new TestLast[] {
+                new TestLast(
+                        "subject exist in corpus many times",
+                        "abca",
+                        "a",
+                        "bca"),
+                new TestLast(
+                        "subject not in corpus",
+                        "abc",
+                        "d",
+                        "abc"),
+                new TestLast(
+                        "subject exists in corpus once",
+                        "abc",
+                        "a",
+                        "bc"),
+                new TestLast(
+                        "provided example",
+                        "banana",
+                        "an",
+                        "ana"),
+                new TestLast(
+                        "second provide example",
+                        "forest",
+                        "zoo",
+                        "forest") };
+        for (TestLast tc : tests) {
+            String got = new Week2().lastPart(tc.subject, tc.corpus);
+            assertEquals(String.format("\n%s\n", tc.description), tc.want, got);
+        }
+    }
+
 }

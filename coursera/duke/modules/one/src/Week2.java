@@ -45,4 +45,12 @@ public class Week2 {
         }
         return occurrences == 2;
     }
+
+    public String lastPart( String subject,String corpus){
+        String[]  parts =  corpus.split(subject,2);
+        if (parts.length == 2) {
+			return parts[1];
+		}
+		return corpus;
+	}
 }
